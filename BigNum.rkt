@@ -26,10 +26,21 @@
 ;Pasamos a la implementación mela
 ;Debemos hacer:
 ;SUMA
-(define suma (lambda (op1 op2) (cond
-                                 [(and (null? op1) (null? op2)) '()]
-                                 [(> (+ (car op1) (car op2))    32) (cons 0 (suma (cdr op1) (cdr op2))) ]
-                                 [(< (+ (car op1) (car op2))    32) (cons (+ (car op1) (car op2)) (suma (cdr op1) (cdr op2)))   ]
+(define suma (lambda (op1 op2) (let sumaux ([carrier 0] [op1] [op2])
+                                 (cond
+                                   [(and (null? op1) (null? op2)) '()]
+                                   [(= carrier 0) (cond
+                                                    [(> (+ (car op1) (car op2))    31) (cons 0 (sumaux (- (+ ) 31) (cdr op1) (cdr op2))) ]
+                                                    [(< (+ (car op1) (car op2))    32) (cons (+ (car op1) (car op2)) (suma (cdr op1) (cdr op2)))   ]))))
+                                                    ]))))
 
 
-                                 ) ) )
+                                
+
+;Pruebas
+;'(0 1 2) '(1 1 1) 
+
+
+                                    ;garbage
+                                    ;(> (+ (car op1) (car op2))    31) (cons 0 (suma (cdr op1) (cdr op2))) ]
+                                   ;[(< (+ (car op1) (car op2))    32) (cons (+ (car op1) (car op2)) (suma (cdr op1) (cdr op2)))   ]))))
