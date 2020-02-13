@@ -26,10 +26,19 @@
 ;Pasamos a la implementación mela
 ;Debemos hacer:
 ;SUMA
-(define suma (lambda (op1 op2) (cond
-                                 [(and (null? op1) (null? op2)) '()]
-                                 [(> (+ (car op1) (car op2))    32) (cons 0 (suma (cdr op1) (cdr op2))) ]
-                                 [(< (+ (car op1) (car op2))    32) (cons (+ (car op1) (car op2)) (suma (cdr op1) (cdr op2)))   ]
+(define suma (lambda (n) () ) )
 
+;RESTA
+(define resta (lambda (n) () ) )
 
-                                 ) ) )
+;MULTIPLICACION
+(define multiplicacion (lambda (n) () ) )
+
+;DIVISION
+(define division (lambda (n) () ) )
+
+;POTENCIA
+(define potencia (lambda (n) () ) )
+
+;FACTORIAL
+(define factorial (lambda (n) () ) )
