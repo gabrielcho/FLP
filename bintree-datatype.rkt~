@@ -41,9 +41,9 @@
                              (empty-tree (lv) '())
                              (node (key left right) (view-tree left))
                              
-                             )
+                           )
                           
-                           ))
+                          ))
 
 ;move-to-right-son
 (define move-to-right-son (lambda (bt)
@@ -56,11 +56,7 @@
                           ))
 
 ;number->bintree
-(define number->bintree
-    (lambda (n)
-       (node n (empty-tree empty-bintree) (empty-tree empty-bintree)
-      ))
-    )
+#;(define number->bintree (lambda (n) ))
 
 ;empty-bintree?
 (define empty-bintree?
@@ -80,41 +76,12 @@
       )
     )
 
-  )
+)
 
 
 ;bintree-with-at-least-one-child?
-(define bintree-with-at-least-one-child?
-  (lambda (bt)
-    (cases bintree bt
-      (empty-tree (lv) #f)
-      (node (key left right) (cond [(and (empty-bintree? left) (empty-bintree? right)) #f]
-                                   [(or (bintree? left) (bintree? right)  ) #t]
-                                   ) )
-      )
-    )
-  )
 
-;insert-to-left (insert-to-left left)
-#;(define insert-to-left
-  (lambda (n bt)
-    (cases bintree bt
-      (empty-tree (lv) (node n empty-bintree empty-bintree ) )
-      (node (key left right)
-            (cond [(and (< n key) (empty-bintree? left ) (number->bintree n)  )]
-                  [(and (> n key) (empty-bintree? right)) (number->bintree n) ]
-                  [(< n key) (list key  )] 
-                  [(> n key)]
-                  )
-
-       )
-
-      )
-    )
-  )
-    
-
-
+;insert-to-left
 
 ;bintree-order-validation
 
@@ -127,22 +94,3 @@
                     (node 4 (empty-tree '() ) (empty-tree '() ) ) ) )
 
 (define emptree (empty-tree empty-bintree ))
-
-(define leaftree (node 1 (empty-tree '() ) (empty-tree '() ) ))
-#;(define insert-to-left
-  (lambda (n bt)
-    (cases bintree bt
-      (empty-tree (lv) (node n empty-bintree empty-bintree ) )
-      (node (key left right)
-            (cond [(and (< n key) (empty-bintree? left ) (number->bintree n)  )]
-                  [(and (> n key) (empty-bintree? right)) (number->bintree n) ]
-                  [(< n key) (list key  )] 
-                  [(> n key)]
-                  )
-
-       )
-
-      )
-    )
-  )
-    
