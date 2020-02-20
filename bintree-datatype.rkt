@@ -96,19 +96,16 @@
   )
 
 ;insert-to-left (insert-to-left left)
-#;(define insert-to-left
+(define insert-to-left
   (lambda (n bt)
     (cases bintree bt
       (empty-tree (lv) (node n empty-bintree empty-bintree ) )
       (node (key left right)
-            (cond [(and (< n key) (empty-bintree? left ) (number->bintree n)  )]
-                  [(and (> n key) (empty-bintree? right)) (number->bintree n) ]
-                  [(< n key) (list key  )] 
-                  [(> n key)]
+            (cond [(empty-bintree? left ) (view-tree (node key (number->bintree n) right ))  ]
+                  [else (node key (insert-to-left left) right) ]
+                  
                   )
-
-       )
-
+            )
       )
     )
   )
@@ -134,10 +131,7 @@
     (cases bintree bt
       (empty-tree (lv) (node n empty-bintree empty-bintree ) )
       (node (key left right)
-            (cond [(and (< n key) (empty-bintree? left ) (number->bintree n)  )]
-                  [(and (> n key) (empty-bintree? right)) (number->bintree n) ]
-                  [(< n key) (list key  )] 
-                  [(> n key)]
+            (cond 
                   )
 
        )
@@ -145,4 +139,5 @@
       )
     )
   )
-    
+
+;pregunta para Juamarcos: ¿La inserción tiene algún tipo de orden o restricción?
